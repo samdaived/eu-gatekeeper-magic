@@ -1,19 +1,20 @@
-import { useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Language } from '@/lib/i18n';
+} from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Language } from "@/lib/i18n";
+import { Globe, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const languages: { code: Language; label: string; flag: string }[] = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'fr', label: 'Français', flag: '🇫🇷' },
-  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: "fi", label: "Suomi", flag: "🇫🇮" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "en", label: "English", flag: "🇬🇧" },
+  { code: "fr", label: "Français", flag: "🇫🇷" },
 ];
 
 const Header = () => {
@@ -25,7 +26,7 @@ const Header = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
@@ -37,38 +38,42 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-lg hero-gradient flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">EU</span>
+              <span className="text-primary-foreground font-bold text-lg">
+                EU
+              </span>
             </div>
             <div className="flex flex-col">
               <span className="font-semibold text-foreground text-lg leading-tight">
                 EUGet Solutions
               </span>
-              <span className="text-xs text-muted-foreground leading-tight">Oy</span>
+              <span className="text-xs text-muted-foreground leading-tight">
+                Oy
+              </span>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection("hero")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.nav.home}
             </button>
             <button
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection("services")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.nav.services}
             </button>
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection("about")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.nav.about}
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.nav.contact}
@@ -89,7 +94,7 @@ const Header = () => {
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className={language === lang.code ? 'bg-secondary' : ''}
+                    className={language === lang.code ? "bg-secondary" : ""}
                   >
                     <span className="mr-2">{lang.flag}</span>
                     {lang.label}
@@ -99,7 +104,7 @@ const Header = () => {
             </DropdownMenu>
 
             <Button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="hidden sm:flex"
             >
               {t.nav.contact}
@@ -124,25 +129,25 @@ const Header = () => {
           <nav className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               <button
-                onClick={() => scrollToSection('hero')}
+                onClick={() => scrollToSection("hero")}
                 className="text-left py-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t.nav.home}
               </button>
               <button
-                onClick={() => scrollToSection('services')}
+                onClick={() => scrollToSection("services")}
                 className="text-left py-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t.nav.services}
               </button>
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => scrollToSection("about")}
                 className="text-left py-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t.nav.about}
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection("contact")}
                 className="text-left py-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t.nav.contact}
