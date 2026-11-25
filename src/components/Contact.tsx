@@ -48,7 +48,7 @@ const Contact = () => {
                 {t.contact.address}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                <br />
+         
                 00400 Helsinki
                 <br />
                 Finland 🇫🇮
