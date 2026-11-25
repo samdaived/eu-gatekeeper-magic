@@ -48,7 +48,6 @@ const Contact = () => {
                 {t.contact.address}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Ida Aalbergin tie 1 a E 132
                 <br />
                 00400 Helsinki
                 <br />
