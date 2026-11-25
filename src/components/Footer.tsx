@@ -25,7 +25,6 @@ const Footer = () => {
 
           {/* Address */}
           <div className="text-center md:text-right text-primary-foreground/60 text-sm">
-            <div>Ida Aalbergin tie 1 a E 132</div>
             <div>00400 Helsinki, Finland</div>
           </div>
         </div>
